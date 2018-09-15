@@ -11,6 +11,7 @@ export class WhackAMole extends React.Component {
             message: null,
         };
         this.onClickCircle = this.onClickCircle.bind(this);
+        this.stop = this.stop.bind(this);
     }
 
     componentWillMount() {
@@ -33,12 +34,21 @@ export class WhackAMole extends React.Component {
         }
     }
 
+    stop() {
+        clearInterval(this.interval);
+    }
+
+    componentWillUnmount() {
+        this.stop();
+    }
+
     render() {
         return (
             <div>
                 <h1 className="centertext">Whack-A-Mole!</h1>
                 <h3 className="centertext">A more amusing visualization of stock trade timing...</h3>
                 <br />
+                <button onClick={this.stop}>I gIvE UP</button>
                 <h4 className="centertext">{this.state.message}</h4>
                 <div className="holesRow">
                     <Hole id={0} mole={this.state.moleHole == 0} onClick={() => this.onClickCircle(0)}/>
