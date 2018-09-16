@@ -27,10 +27,10 @@ class App extends Component {
     } else {
       view = (
         <div>
-          <button className="Button" onClick={() => this.showView(1)}>View Market Data</button>
+          <Button onClick={() => this.showView(1)}>View Market Data</Button>
           <br />
           <br />
-          <button className="Button" onClick={() => this.showView(2)}>Play Whack-A-Mole</button>
+          <Button className="Button" onClick={() => this.showView(2)}>Play Whack-A-Mole</Button>
         </div>
       );
     }
