@@ -56,7 +56,7 @@ export class WhackAMole extends React.Component {
                     Good luck, grasshopper.
                 </p>
                 <br />
-                <button onClick={this.stop}>I gIvE UP</button>
+                <button className="marketButton" onClick={this.stop}>I gIvE UP</button>
                 <h4>{this.state.message}</h4>
                 <table className="table">
                     <tr className="holesRow">
