@@ -60,6 +60,7 @@ export class MarketData extends React.Component {
                 <div className="app">
                     <h1 className="centertext">All Companies</h1>
                     <h3>Click on companies you are interested in, then press "Show Details" for more information.</h3>
+                    <button className="marketButton" onClick={this.toggle}>Show Details</button> <br /> <br />
                     <ul>
                         {this.state.allCompanies.map(c => (
                             <div>
@@ -67,7 +68,6 @@ export class MarketData extends React.Component {
                             </div>
                         ))}
                     </ul>
-                    <button onClick={this.toggle}>Show Details</button>
                 </div>
             );
         } else {
@@ -75,11 +75,15 @@ export class MarketData extends React.Component {
                 <div className="app">
                     <h3>Key:</h3>
                     <p><b>-2</b>: Strong Sell</p>
-                    <p><b>-1:</b> Sell</p>
-                    <p><b>0:</b>: Neutral</p>
-                    <p><b>1:</b>: Buy</p>
-                    <p><b>2:</b>: Strong Buy</p>
-                    
+                    <p><b>-1</b> Sell</p>
+                    <p><b>0</b>: Neutral</p>
+                    <p><b>1</b>: Buy</p>
+                    <p><b>2</b>: Strong Buy</p>
+
+                    <br /><br/>
+                    <button className="marketButton" onClick={this.toggle}>Show All</button>
+                    <br /><br />
+
                     <h1 className="centertext">Selected Companies</h1>
                     <ul>
                         {this.state.myCompanies.map(c => (
@@ -88,7 +92,6 @@ export class MarketData extends React.Component {
                             </div>
                         ))}
                     </ul>
-                    <button onClick={this.toggle}>Show All</button>
                 </div>
             );
         }

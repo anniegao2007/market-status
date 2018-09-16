@@ -58,24 +58,26 @@ export class WhackAMole extends React.Component {
                 <br />
                 <button onClick={this.stop}>I gIvE UP</button>
                 <h4>{this.state.message}</h4>
-                <div className="holesRow">
-                    <Hole id={0} mole={this.state.moleHole === 0} onClick={() => this.onClickCircle(0)}/>
-                    <Hole id={1} mole={this.state.moleHole === 1} onClick={() => this.onClickCircle(1)}/>
-                    <Hole id={2} mole={this.state.moleHole === 2} onClick={() => this.onClickCircle(2)}/>
-                    <br />
-                </div>
-                <div className="holesRow">
-                    <Hole id={3} mole={this.state.moleHole === 3} onClick={() => this.onClickCircle(3)}/>
-                    <Hole id={4} mole={this.state.moleHole === 4} onClick={() => this.onClickCircle(4)}/>
-                    <Hole id={5} mole={this.state.moleHole === 5} onClick={() => this.onClickCircle(5)}/>
-                    <br />
-                </div>
-                <div className="holesRow">
-                    <Hole id={6} mole={this.state.moleHole === 6} onClick={() => this.onClickCircle(6)}/>
-                    <Hole id={7} mole={this.state.moleHole === 7} onClick={() => this.onClickCircle(7)}/>
-                    <Hole id={8} mole={this.state.moleHole === 8} onClick={() => this.onClickCircle(8)}/>
-                    <br />
-                </div>
+                <table className="table">
+                    <tr className="holesRow">
+                        <Hole id={0} mole={this.state.moleHole === 0} onClick={() => this.onClickCircle(0)}/>
+                        <Hole id={1} mole={this.state.moleHole === 1} onClick={() => this.onClickCircle(1)}/>
+                        <Hole id={2} mole={this.state.moleHole === 2} onClick={() => this.onClickCircle(2)}/>
+                        <br />
+                    </tr>
+                    <tr className="holesRow">
+                        <Hole id={3} mole={this.state.moleHole === 3} onClick={() => this.onClickCircle(3)}/>
+                        <Hole id={4} mole={this.state.moleHole === 4} onClick={() => this.onClickCircle(4)}/>
+                        <Hole id={5} mole={this.state.moleHole === 5} onClick={() => this.onClickCircle(5)}/>
+                        <br />
+                    </tr>
+                    <tr className="holesRow">
+                        <Hole id={6} mole={this.state.moleHole === 6} onClick={() => this.onClickCircle(6)}/>
+                        <Hole id={7} mole={this.state.moleHole === 7} onClick={() => this.onClickCircle(7)}/>
+                        <Hole id={8} mole={this.state.moleHole === 8} onClick={() => this.onClickCircle(8)}/>
+                        <br />
+                    </tr>
+                </table>
                 <h2>Total Score: {this.state.score}</h2>
                 <h2>Total Hits: {this.state.hits}</h2>
                 <h2>Total Misses: {this.state.misses}</h2>

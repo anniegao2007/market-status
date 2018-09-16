@@ -2,6 +2,11 @@
   padding: 75px;
 }
 
+.table {
+  margin: auto;
+  width: 45%;
+}
+
 .holesRow{
   display: flex;
   justify-content: space-between;
@@ -13,7 +18,7 @@
   width: 75px;
   border-radius: 50%;
   text-align: center;
-  background-color: rgb(255, 14, 14);
+  background-color: green;
 }
 
 .centertext {
@@ -32,4 +37,13 @@
   background-color: green;
   text-align: center;
   color: white;
+}
+
+.marketButton {
+  width: 10%;
+  height: 30px;
+  margin: center;
+  background-color: gold;
+  text-align: center;
+  color:green;
 }
