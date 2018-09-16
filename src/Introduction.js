@@ -15,7 +15,7 @@ class App extends Component {
 		
 		<h2>What is a stock market?</h2>
 		<h3>A stock market is a place for investors to buy and sell stock. Two main stock markets are the New York Stock Exchange (NYSE) and 
-		Nasdaq. 
+		Nasdaq. </h3>
       </div>
     );
   }

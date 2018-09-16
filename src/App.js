@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Button} from 'react-bootstrap';
 import {WhackAMole} from './WhackAMole.js';
