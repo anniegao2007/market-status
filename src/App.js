@@ -4,6 +4,7 @@ import './App.css';
 import {Button} from 'react-bootstrap';
 import {WhackAMole} from './WhackAMole.js';
 import {MarketData} from './MarketData.js';
+import {Tutorial} from './Tutorial.js';
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class App extends Component {
     if(this.state.view === 1) {
       view = (
         <div>
-          <MarketData />
+          <Tutorial />
           <br />
           <div className="centertext">
             <button className="button" onClick={() => this.showView(-1)}>Back</button>
@@ -31,6 +32,16 @@ class App extends Component {
         </div>
       );
     } else if(this.state.view === 2) {
+      view = (
+        <div>
+          <MarketData />
+          <br />
+          <div className="centertext">
+            <button className="button" onClick={() => this.showView(-1)}>Back</button>
+          </div>
+        </div>
+      );
+    } else if(this.state.view === 3) {
       view = (
         <div>
           <WhackAMole />
@@ -44,10 +55,15 @@ class App extends Component {
       view = (
         <div className="centertext">
           <h1>HackMIT 2018 (until we get a better title)</h1>
-          <button className="button" onClick={() => this.showView(1)}>View Market Data</button>
+          <button className="button" onClick={() => this.showView(1)}>Tutorial</button>
           <br />
           <br />
-          <button className="button" onClick={() => this.showView(2)}>Play Whack-A-Mole!</button>
+
+          <button className="button" onClick={() => this.showView(2)}>View Market Data</button>
+          <br />
+          <br />
+
+          <button className="button" onClick={() => this.showView(3)}>Play Whack-A-Mole!</button>
         </div>
       );
     }

@@ -23,9 +23,9 @@ export class WhackAMole extends React.Component {
         let message = "";
         if(c === this.state.moleHole) {
             let delta = Math.floor(Math.random() * 10) - 3;
-            if(this.state.score === 9) {
+            if(this.state.hits === 9) {
                 clearInterval(this.interval);
-                message = "You Win!";
+                message = `Game Over. Your score is ${this.state.score}.`;
             } else {
                 message = `Hit! Your score just increased by ${delta}!`;
             }
@@ -79,7 +79,7 @@ export class WhackAMole extends React.Component {
                 <h2>Total Score: {this.state.score}</h2>
                 <h2>Total Hits: {this.state.hits}</h2>
                 <h2>Total Misses: {this.state.misses}</h2>
-                <h2>Accuracy: {this.state.hits===0 ? 0 : (this.state.hits / (this.state.score + this.state.misses)).toFixed(3)}</h2>
+                <h2>Accuracy: {this.state.hits===0 ? 0 : (this.state.hits / (this.state.hits + this.state.misses)).toFixed(3)}</h2>
             </div>
         )
     }
