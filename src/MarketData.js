@@ -18,7 +18,8 @@ export class MarketData extends React.Component {
 
     componentDidMount() {
         let allCompanies = [];
-        const url = "https://financialmoles.herokuapp.com/proxy/api/v3/datatables/ZACKS/AR.json?api_key=sEpgZsqAFy4-iptWfY2V";
+        const url = "https://www.quandl.com/api/v3/datatables/ZACKS/AR.json?api_key=sEpgZsqAFy4-iptWfY2V";
+        //const url = "https://financialmoles.herokuapp.com/proxy/api/v3/datatables/ZACKS/AR.json?api_key=sEpgZsqAFy4-iptWfY2V";
         axios.get(url).then(res => {
             for(let i = 0; i < numCompanies; i++) {
                 let company = res.data.datatable.data[i];
