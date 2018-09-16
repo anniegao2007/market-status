@@ -1,3 +1,15 @@
+/* originally in package.json for localhost:3000
+"proxy": {
+    "/proxy": {
+      "target": "https://www.quandl.com",
+      "pathRewrite": {
+        "^/proxy": ""
+      },
+      "changeOrigin": true
+    }
+  },
+*/
+
 import React from 'react';
 import axios from 'axios';
 
