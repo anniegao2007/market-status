@@ -1,0 +1,48 @@
+/* Create two equal columns that floats next to each other */
+.stockcolumn {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    font-family: "Garamond";
+}
+
+.vocab {
+    float: left;
+    text-align: center;
+    width: 16%;
+    padding: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-style: solid;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    font-family: Garamond;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    text-align: center;
+    font-family: "Garamond";
+    margin-left: 40%;
+}
+
+body {background-color: #c5c5c5;}
+
+.intro2heading{
+    text-align: center;
+}
