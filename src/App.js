@@ -21,16 +21,33 @@ class App extends Component {
   render() {
     let view = null;
     if(this.state.view === 1) {
-      view = <MarketData />;
-    } else if(this.state.view === 2) {
-      view = <WhackAMole />;
-    } else {
       view = (
         <div>
-          <Button onClick={() => this.showView(1)}>View Market Data</Button>
+          <MarketData />
+          <br />
+          <div className="centertext">
+            <button className="button" onClick={() => this.showView(-1)}>Back</button>
+          </div>
+        </div>
+      );
+    } else if(this.state.view === 2) {
+      view = (
+        <div>
+          <WhackAMole />
+          <br />
+          <div className="centertext">
+            <button className="button" onClick={() => this.showView(-1)}>Back</button>
+          </div>
+        </div>
+      );
+    } else {
+      view = (
+        <div className="centertext">
+          <h1>HackMIT 2018 (until we get a better title)</h1>
+          <button className="button" onClick={() => this.showView(1)}>View Market Data</button>
           <br />
           <br />
-          <Button className="Button" onClick={() => this.showView(2)}>Play Whack-A-Mole</Button>
+          <button className="button" onClick={() => this.showView(2)}>Play Whack-A-Mole!</button>
         </div>
       );
     }
