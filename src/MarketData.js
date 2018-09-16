@@ -88,7 +88,7 @@ export class MarketData extends React.Component {
                     <ul>
                         {this.state.myCompanies.map(c => (
                             <div>
-                                <li key={c[1]}>{c[1]}: {c[3]} <br /> <mark>Rank: {Math.round(c[26])-3}</mark></li>
+                                <li key={c[1]}>{c[1]}: {c[3]} <br /> <mark>Rank: {-1*(Math.round(c[26])-3)}</mark></li>
                             </div>
                         ))}
                     </ul>
