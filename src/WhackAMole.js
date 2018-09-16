@@ -10,7 +10,6 @@ export class WhackAMole extends React.Component {
             misses: 0,
             moleHole: null,
             message: null,
-            gifs: []
         };
         this.onClickCircle = this.onClickCircle.bind(this);
         this.stop = this.stop.bind(this);
@@ -18,11 +17,6 @@ export class WhackAMole extends React.Component {
 
     componentWillMount() {
         this.interval = setInterval(() => this.setState({ moleHole: Math.floor(Math.random() * 9) }), 1000); //put mole at random spot every second
-        axios.get("http://api.giphy.com/v1/gifs/search?q=whackamole+finance&api_key=bVs0F29U8P2a2YAUunsCS5Hjx9GlgX0y&limit=2").then(res => {
-            let gif1 = res.data.data[0].images.fixed_height_small_still.url;
-            let gif2 = res.data.data[1].images.fixed_height_small_still.url;
-            this.setState({ gifs: [gif1, gif2] });
-        });
     }
 
     onClickCircle(c) {
@@ -55,7 +49,6 @@ export class WhackAMole extends React.Component {
             <div className="centertext">
                 <h1>Whack-A-Mole!</h1>
                 <h3>A more amusing visualization of stock trade timing...</h3>
-                <img src={this.state.gifs[0]} />
                 <p>
                     The rules are simple. The moles are fast. You will miss many of them. Just like you will probably miss many prime stocktrading opportunities.
                     Each opportunity you do seize is a risk, however. You do not know how much you will win or lose.

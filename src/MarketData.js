@@ -18,7 +18,7 @@ export class MarketData extends React.Component {
 
     componentDidMount() {
         let allCompanies = [];
-        const url = "https://www.quandl.com/api/v3/datatables/ZACKS/AR.json?api_key=sEpgZsqAFy4-iptWfY2V";
+        const url = "http://localhost:3000/proxy/api/v3/datatables/ZACKS/AR.json?api_key=sEpgZsqAFy4-iptWfY2V";
         //const url = "https://www.financialmoles.herokuapp.com/proxy/api/v3/datatables/ZACKS/AR.json?api_key=sEpgZsqAFy4-iptWfY2V";
         axios.get(url).then(res => {
             for(let i = 0; i < numCompanies; i++) {
@@ -57,8 +57,9 @@ export class MarketData extends React.Component {
     render() {
         if(this.state.seeAll) {
             return (
-                <div>
+                <div className="app">
                     <h1 className="centertext">All Companies</h1>
+                    <h3>Click on companies you are interested in, then press "Show Details" for more information.</h3>
                     <ul>
                         {this.state.allCompanies.map(c => (
                             <div>
@@ -71,12 +72,19 @@ export class MarketData extends React.Component {
             );
         } else {
             return (
-                <div>
+                <div className="app">
+                    <h3>Key:</h3>
+                    <p><b>-2</b>: Strong Sell</p>
+                    <p><b>-1:</b> Sell</p>
+                    <p><b>0:</b>: Neutral</p>
+                    <p><b>1:</b>: Buy</p>
+                    <p><b>2:</b>: Strong Buy</p>
+                    
                     <h1 className="centertext">Selected Companies</h1>
                     <ul>
                         {this.state.myCompanies.map(c => (
                             <div>
-                                <li key={c[1]}>{c[1]}: {c[3]} Rank: {c[26]}</li>
+                                <li key={c[1]}>{c[1]}: {c[3]} <br /> <mark>Rank: {Math.round(c[26])-3}</mark></li>
                             </div>
                         ))}
                     </ul>

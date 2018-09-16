@@ -1,3 +1,7 @@
+.app {
+  padding: 75px;
+}
+
 .holesRow{
   display: flex;
   justify-content: space-between;
@@ -14,6 +18,11 @@
 
 .centertext {
   text-align: center;
+}
+
+.gifs {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .button {
