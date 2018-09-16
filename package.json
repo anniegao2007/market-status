@@ -3,9 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.5.1",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.5"
+  },
+  "proxy": {
+    "/proxy": {
+      "target": "https://www.quandl.com",
+      "pathRewrite": {
+        "^/proxy": ""
+      },
+      "changeOrigin": true
+    }
   },
   "scripts": {
     "start": "react-scripts start",
